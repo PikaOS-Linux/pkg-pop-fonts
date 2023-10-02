@@ -1,15 +1,14 @@
 DEBIAN_FRONTEND=noninteractive
 
 # Clone Upstream
-mkdir -p ./pika-fonts
-cp -rvf ./* ./pika-fonts || echo
-cd ./pika-fonts
+git clone https://github.com/pop-os/fonts
+cd ./fonts
 
 # Get build deps
 apt-get build-dep ./ -y
 
 # Build package
-dpkg-buildpackage
+dpkg-buildpackage --no0sign
 
 # Move the debs to output
 cd ../
