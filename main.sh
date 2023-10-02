@@ -8,7 +8,7 @@ cd ./fonts
 apt-get build-dep ./ -y
 
 # Build package
-dpkg-buildpackage --no0sign
+dpkg-buildpackage --no-sign
 
 # Move the debs to output
 cd ../
